@@ -7,11 +7,9 @@ $(document).ready(function () {
     var userAnswers = []
     var questionStep = 0
     var answerStep = 0
-    var guessedCorrect = 0
-    var guessedWrong = 0
+    var timer = 90
+    var timerRunning = false;
 
-    console.log(answers[1][0]);
-    console.log(userAnswers);
     welcomeScreen()
     function welcomeScreen() {
         $('.game').html("<h1>Welcome!</h1><br><h2>Click To Get Started</h2>");
@@ -19,31 +17,33 @@ $(document).ready(function () {
 
     $(document).on('click', function(){
         $('.game').empty();
-        
+        gameStop()
         if (gameRunning === false) {
             $('.game').html("<h2>Instructions: You will be given a time limit to answer all of these questions. At the end of the game you will be presented with your grade, which will be added to your permanet record.</h2>");
             gameRunning = true;
+            countdownTimer()
         } else {
-            // console.log("first question");
+
             questionForm()
+            buttonLabeler()
             $('.one').on('click', function () {
-                console.log('button one was clicked');
                 questionStep++
+                answerStep++
                 userAnswers.push("0")
               })
             $('.two').on('click', function () {
-                console.log('button two was clicked');
                 questionStep++
+                answerStep++
                 userAnswers.push("1")
               })
             $('.three').on('click', function () {
-                console.log('button three was clicked');
                 questionStep++
+                answerStep++
                 userAnswers.push("2")
               })
             $('.four').on('click', function () {
-                console.log('button four was clicked');
                 questionStep++
+                answerStep++
                 userAnswers.push("3")
               })
         }
@@ -58,11 +58,89 @@ $(document).ready(function () {
         
     }
 
+    function compareAnswers() {
+        if (correctAnswers[0] === userAnswers[0]) {
+            guessedCorrect++
+        } else {
+            guessedWrong++
+        }
+        if (correctAnswers[1] === userAnswers[1]) {
+            guessedCorrect++
+        } else {
+            guessedWrong++
+        }
+        if (correctAnswers[2] === userAnswers[2]) {
+            guessedCorrect++
+        } else {
+            guessedWrong++
+        }
+        if (correctAnswers[3] === userAnswers[3]) {
+            guessedCorrect++
+        } else {
+            guessedWrong++
+        }
+        if (correctAnswers[4] === userAnswers[4]) {
+            guessedCorrect++
+        } else {
+            guessedWrong++
+        }
+        if (correctAnswers[5] === userAnswers[5]) {
+            guessedCorrect++
+        } else {
+            guessedWrong++
+        }
+        if (correctAnswers[6] === userAnswers[6]) {
+            guessedCorrect++
+        } else {
+            guessedWrong++
+        }
+        if (correctAnswers[7] === userAnswers[7]) {
+            guessedCorrect++
+        } else {
+            guessedWrong++
+        }
+    }
 
+    function buttonLabeler() {
+        var buttonOne = answers[answerStep][0]
+                $('.one').text(buttonOne)
 
+        var buttonTwo = answers[answerStep][1]
+                $('.two').text(buttonTwo)
 
+        var buttonThree = answers[answerStep][2]
+                $('.three').text(buttonThree)
 
+        var buttonFour = answers[answerStep][3]
+                $('.four').text(buttonFour)
+    }
 
+    function countdownTimer() {
+        if (timerRunning = false) {
+            
+            var interval = setInterval(function() {
+                timer--;
+                if (timer == 0) {
+                clearInterval(interval);
+                }
+            }, 1000);
+            timerRunning = true;
+        }
+        $('.counter').html("<h2>"+ timer +"</h2>");
+    }
+    countdownTimer()
+
+    function gameStop() {
+        if (questionStep === 7) {
+            
+               setTimeout(function(){
+                $('.game').html("<h2>Lets See How You Did!</h2>");
+               }, 1000);
+               setTimeout(function(){
+                $('.game').html("<h2>Your Score Was: "+ playerScore +"</h2>");
+               }, 6000);
+        }
+    }
 
 
 });
