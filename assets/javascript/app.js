@@ -1,9 +1,9 @@
 $(document).ready(function () {
     var playerScore = 0;
     var gameRunning = false;
-    var questions = ["what is 12", "two", "three", "three", "three", "three", "three", "three"];
-    var answers = { 0: ["1 and 2", "2 sixes", "15 minus 3", "12"], 1: ["yes", "no", "maybe", "so"], 2: ["yes", "no", "maybe", "so"], 3: ["yes", "no", "maybe", "so"], 4: ["yes", "no", "maybe", "so"], 5: ["yes", "no", "maybe", "so"], 6: ["yes", "no", "maybe", "so"], 7: ["yes", "no", "maybe", "so"] };
-    var correctAnswers = ["3", "3", "3", "3", "3", "3", "3", "3",];
+    var questions = ["Rick uses a ____ to escape bad situations.", "What does wubba lubba dub dub mean?", "What does Jerry do on his tablet?", "I'm Mr. Meeseeks, ________", "Morty is in love with:", "Beth shoots what long time family friend?", "The name of the guy who \"Just loves killin\' people\"", "What does Beth Do for work?"];
+    var answers = { 0: ["Spaceship", "Portal Gun", "Morty", "Memory Ray"], 1: ["Party!", "I am the greatest!", "S#!t yeah motherf%!ker!", "I'm in great pain."], 2: ["Pop baloons.", "Google himself.", "Watch interdimensional cable.", "Jerry has a tablet?"], 3: ["Let's kill him!", "Look at me!", "Nice to meet you!", "Give me a beer!"], 4: ["Jessie", "Jennifer", "Jessica", "Jinny"], 5: ["Pencilvester", "Sleepy Gary", "Mr. Beauregard", "Mr. Poopy Butthole"], 6: ["Jaguar", "Krombopulos Michael", "Evil Rick", "Fart"], 7: ["Doctor", "Stay at home mom", "Marketing", "Horse Surgeon"] };
+    var correctAnswers = ["1", "3", "0", "1", "2", "3", "1", "3",];
     var userAnswers = [];
     var questionStep = 0;
     var answerStep = 0;
@@ -19,6 +19,7 @@ $(document).ready(function () {
         gameStop()
         $('.game').empty();
         if (gameRunning === false) {
+            $('.counter').empty()
             $('.game').html("<h2>Instructions: You will be given a time limit to answer all of these questions. At the end of the game you will be presented with your grade, which will be added to your permanet record.</h2>");
             gameRunning = true;
             $(document).on('click', function () {
@@ -154,7 +155,7 @@ $(document).ready(function () {
             $('.game').html("<h2>Lets See How You Did!</h2>");
         }, 0);
         setTimeout(function () {
-            $('.game').html("<h2>Your Score Was: " + playerScore + "</h2>");
+            $('.game').html("<h2>Your Score Was: " + playerScore + "/8</h2>");
         }, 6000);
         setTimeout(function () {
             $('.game').html("<h2>Click To Play Again!</h2>");
