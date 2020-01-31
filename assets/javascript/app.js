@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     welcomeScreen()
     function welcomeScreen() {
-        $('.game').html("<h1>Welcome!</h1><br><h2>Click To Get Started</h2>");
+        $('.game').html("<h1>Rick & Morty Time!</h1><br><h2>Click To Get Schwifty</h2>");
     }
 
     $(document).on('click', function () {
