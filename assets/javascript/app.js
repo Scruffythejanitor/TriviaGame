@@ -20,7 +20,7 @@ $(document).ready(function () {
         $('.game').empty();
         if (gameRunning === false) {
             $('.counter').empty()
-            $('.game').html("<h2>Instructions: You will be given a time limit to answer all of these questions. At the end of the game you will be presented with your grade, which will be added to your permanet record.</h2>");
+            $('.game').html("<h2>Instructions:</h2><br><h3>You will be given a time limit to answer all of these questions. At the end of the game you will be presented with your grade, which will be added to your permanet record.</h3>");
             gameRunning = true;
             $(document).on('click', function () {
                 countdownTimer()

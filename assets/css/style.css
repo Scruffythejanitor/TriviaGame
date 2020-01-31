@@ -1,18 +1,27 @@
+body{
+    background-image: url('/assets/images/5pr2d6fopii31.jpg');
+    background-size: ;
+}
 .middle{
     width: 400px;
-    height: 400px;
+    height: 800px;
     position: fixed;
     top: 50%;
     left: 50%;
     margin-top: -200px;
     margin-left: -200px;
     text-align: center;
+    z-index: 100;
+    color: white;
+    
 }
 .counter{
     text-align: center;
+    font-size: 80px;
+    height
 }
 .question{
-    text-align: center;
+    font-size: 30px;
 }
 .one, .two, .three, .four{
     margin: 5px;
@@ -22,6 +31,19 @@
     font-size: 20px;
     color: white;
 }
-.bg{
-    background: url('/assets/images/giphy.gif');
+.game-contian{
+    height: 400px;
+    height: 400px;
+}
+.portal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    margin-top: -400px;
+    margin-left: -400px;
+    background-image: url('/assets/images/giphy.gif');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
