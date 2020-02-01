@@ -1,6 +1,5 @@
 body{
     background-image: url('/assets/images/5pr2d6fopii31.jpg');
-    background-size: ;
 }
 .middle{
     width: 400px;
@@ -18,7 +17,6 @@ body{
 .counter{
     text-align: center;
     font-size: 80px;
-    height
 }
 .question{
     font-size: 30px;
