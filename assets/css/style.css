@@ -1,5 +1,6 @@
 body{
     background-image: url("https://scruffythejanitor.github.io/TriviaGame/assets/images/5pr2d6fopii31.jpg");
+    -webkit-background-size: cover;
 }
 .middle{
     width: 400px;
@@ -42,6 +43,7 @@ body{
     margin-top: -400px;
     margin-left: -400px;
     background-image: url("https://scruffythejanitor.github.io/TriviaGame/assets/images/giphy.gif");
+    -webkit-background-size: cover;
     background-repeat: no-repeat;
     background-size: 100%;
 }
