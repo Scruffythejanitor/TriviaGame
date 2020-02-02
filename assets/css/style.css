@@ -1,5 +1,5 @@
 body{
-    background-image: url('/assets/images/5pr2d6fopii31.jpg');
+    background-image: url("/assets/images/5pr2d6fopii31.jpg");
 }
 .middle{
     width: 400px;
@@ -41,7 +41,7 @@ body{
     height: 800px;
     margin-top: -400px;
     margin-left: -400px;
-    background-image: url('/assets/images/giphy.gif');
+    background-image: url("/assets/images/giphy.gif");
     background-repeat: no-repeat;
     background-size: 100%;
 }
